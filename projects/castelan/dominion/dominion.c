@@ -247,7 +247,7 @@ int playCard(int handPos, int choice1, int choice2, int choice3, struct gameStat
 	
   //get card played
   card = handCard(handPos, state);
-	
+	printf("card to be played: %d\n",card);	
   //check if selected card is an action
   if ( card < adventurer || card > treasure_map )
     {
@@ -314,7 +314,8 @@ int numHandCards(struct gameState *state) {
 
 int handCard(int handPos, struct gameState *state) {
   int currentPlayer = whoseTurn(state);
-  return state->hand[currentPlayer][handPos];
+  printf("inside handcard() currentPlayer: %d\n",currentPlayer);
+	return state->hand[currentPlayer][handPos];
 }
 
 int supplyCount(int card, struct gameState *state) {
