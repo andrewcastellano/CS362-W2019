@@ -24,7 +24,7 @@ int main(){
 	choice1 = 0;
 	initializeGame(numPlayers,k,seed,&G);
 	
-	printf("----- Testing card %s -----\n",TESTCARD);
+	printf("\n----- Testing card %s -----\n",TESTCARD);
 	memcpy(&T,&G,sizeof(struct gameState));
 	for (i = 0; i < 10; ++i){
 		if (i < 7){

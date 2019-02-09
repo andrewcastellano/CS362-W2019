@@ -25,7 +25,7 @@ int main(){
 	choice1 = 1;
 	initializeGame(numPlayers,k,seed,&G);
 	
-	printf("----- Testing card %s -----\n",TESTCARD);
+	printf("\n----- Testing card %s -----\n",TESTCARD);
 	memcpy(&T,&G,sizeof(struct gameState));
 	T.hand[player][0] = salvager; 
 	T.hand[player][1] = feast;// card to trash

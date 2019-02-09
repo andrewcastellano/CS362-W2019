@@ -13,7 +13,7 @@ int main (int argc, char *argv[]){
 	int player = 1;
 	int i;
 	int ans;
-	printf("----- Testing updateCoins(): -----\n\n");	
+	printf("----- Testing updateCoins(): -----\n");	
 
 	//this first test handles all off the different coin denominations
 	printf("----- Different coin denominations -----\n");

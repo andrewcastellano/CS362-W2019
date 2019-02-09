@@ -11,7 +11,7 @@ int main(){
 	int i;
 	int ans;
 
-	printf("----- Testing supplyCount() -----\n");
+	printf("\n----- Testing supplyCount() -----\n");
 
 	printf("----- 10 supply -----\n");
 	G.supplyCount[copper] = 10;

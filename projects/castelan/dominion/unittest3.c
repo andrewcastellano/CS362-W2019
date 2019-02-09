@@ -11,7 +11,7 @@ int main(){
 	int i;
 	int ans;
 	int player = 1;
-	printf("----- Testing fullDeckCount() -----\n\n");
+	printf("\n----- Testing fullDeckCount() -----\n");
 
 	printf("----- Cards in hand, discard pile and deck\n");
 	//deck = hand + discard + deck

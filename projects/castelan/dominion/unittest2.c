@@ -9,7 +9,7 @@ int main(){
 	struct gameState G;
 	int i;
 	int ans;
-	printf("----- Testing isGameOver() -----\n\n");
+	printf("\n----- Testing isGameOver() -----\n");
 	
 	printf("----- 0 provinces -----\n");
 	G.supplyCount[province] = 0;
