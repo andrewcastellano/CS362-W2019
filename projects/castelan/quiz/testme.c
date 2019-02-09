@@ -6,7 +6,7 @@
 char inputChar()
 {
 	int i;
-	i = ((random () % 95) + 32);
+	i = ((random () % 95) + 32); //generate random character between 32 and 126
 	char c;
 	c = (char)i;
 	return c;
@@ -20,7 +20,7 @@ char *inputString()
 	 char randString[6];
 	 int i;
 	 for (i = 0; i < 5; ++i){
-	 	randString[i] = pool[rand() % 5];
+	 	randString[i] = pool[rand() % 5];//select random index in pool and return
 	 }
 	 randString[5] = '\0';
 	 toRet = randString;
