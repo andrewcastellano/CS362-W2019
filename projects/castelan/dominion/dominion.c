@@ -573,7 +573,7 @@ int drawCard(int player, struct gameState *state)
 
     deckCounter = state->deckCount[player];//Create holder for the deck count
     state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
-    state->deckCount[player]--;
+		state->deckCount[player]--;
     state->handCount[player]++;//Increment hand count
   }
 
@@ -711,7 +711,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-    return playSmithy(state,handPos);
+		return playSmithy(state,handPos);
  
     case village:
       //+1 Card
@@ -1216,23 +1216,22 @@ while(drawntreasure<=2){
 	}
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-	  drawntreasure++;
-	else{
+	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold){
+		drawntreasure++;
+	}else{
 	  temphand[z]=cardDrawn;
 	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-	  z++;
+		z++;
 	}
       }
   while(z-1>=0){
-  	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
    	z=z-1;
     }
       return 0;			
 }
 
 int playSmithy(struct gameState *state, int handPos){
-
 int currentPlayer = whoseTurn(state);
 int i;
 

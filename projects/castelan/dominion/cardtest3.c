@@ -46,22 +46,37 @@ int main(){
 	}else{
 		A_FALSE;
 	}
-	if (ans == assertTrue(T.playedCardCount,1) == 1){//card is played
+	if (ans = assertTrue(T.playedCardCount,1) == 1){//card is played
 		A_TRUE;	
 	}else{
 		A_FALSE;
 	}
-	if (ans == assertTrue(T.playedCards[player],salvager) == 1){//salvager is the card that is played
+	if (ans = assertTrue(T.playedCards[player],salvager) == 1){//salvager is the card that is played
 		A_TRUE;
 	}else{
 		A_FALSE;
 	}
-	if (ans == assertTrue(T.handCount[player],(preHand-2)) == 1){//hand count -2 as feast and salvager go out
+	if (ans = assertTrue(T.handCount[player],(preHand-2)) == 1){//hand count -2 as feast and salvager go out
 		A_TRUE;
 	}else{
 		A_FALSE;
 	}
-
+	memcpy(&T,&G,sizeof(struct gameState));
+	T.hand[player][0] = salvager;
+	T.hand[player][1] = province;
+	preCoins = T.coins;
+	preBuys = T.numBuys;
+	cardEffect(salvager,choice1,choice2,choice3,&T,handpos,&bonus);
+	if (ans = assertTrue(preCoins+8,T.coins) == 1){//gain 8 for trashing province
+		A_TRUE;
+	}else{
+		A_FALSE;
+	}
+	if (ans = assertTrue(preBuys+1,T.numBuys) == 1){//gain 1 buy
+		A_TRUE;
+	}else{
+		A_FALSE;
+	}
 }
 
 	
