@@ -39,6 +39,9 @@ int main(){
 	deckCount = T.deckCount[player];
 	preDisc = T.discardCount[player];
 	preDiscCard = smithy;
+	int prePhase, preTurn;
+	prePhase = T.phase;
+	preTurn = T.whoseTurn;
 	cardEffect(smithy,choice1,choice2,choice3,&T,handpos,&bonus);
 	playedCard = T.playedCards[0];
 	
@@ -62,4 +65,15 @@ int main(){
 	}else{
 		A_FALSE;
 	}
+	if (ans = assertTrue(prePhase,T.phase) == 1){ //assert that phase is still the same
+		A_TRUE;
+	}else{
+		A_FALSE;
+	}
+	if (ans = assertTrue(preTurn,T.whoseTurn) == 1){ //assert that turn is still the same
+		A_TRUE;
+	}else{
+		A_FALSE;
+	}
+
 }	
