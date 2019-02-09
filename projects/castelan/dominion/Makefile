@@ -23,22 +23,22 @@ testAll: dominion.o testSuite.c
 
 unittestresults: 
 	gcc -o unittest1 dominion.c unittest1.c rngs.c $(CFLAGS)
-	./unittest1 >> tests.out
+	./unittest1 >> unittestresults.out
 	gcc -o unittest2 dominion.c unittest2.c rngs.c $(CFLAGS)
-	./unittest2 >> tests.out
+	./unittest2 >> unittestresults.out
 	gcc -o unittest3 dominion.c unittest3.c rngs.c $(CFLAGS)
-	./unittest3 >> tests.out
+	./unittest3 >> unittestresults.out
 	gcc -o unittest4 dominion.c unittest4.c rngs.c $(CFLAGS)
-	./unittest4 >> tests.out
+	./unittest4 >> unittestresults.out
 	gcc -o cardtest1 dominion.c cardtest1.c rngs.c $(CFLAGS)
-	./cardtest1 >> tests.out
+	./cardtest1 >> unittestresults.out
 	gcc -o cardtest2 dominion.c cardtest2.c rngs.c $(CFLAGS)
-	./cardtest2 >> tests.out
+	./cardtest2 >> unittestresults.out
 	gcc -o cardtest3 dominion.c cardtest3.c rngs.c $(CFLAGS)
-	./cardtest3 >> tests.out
+	./cardtest3 >> unittestresults.out
 	gcc -o cardtest4 dominion.c cardtest4.c rngs.c $(CFLAGS)
-	./cardtest4 >> tests.out
-	gcov dominion.c >> tests.out
+	./cardtest4 >> unittestresults.out
+	gcov dominion.c>> unittestresults.out
 
 
 interface.o: interface.h interface.c
