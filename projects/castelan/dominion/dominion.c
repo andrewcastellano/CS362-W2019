@@ -314,7 +314,6 @@ int numHandCards(struct gameState *state) {
 
 int handCard(int handPos, struct gameState *state) {
   int currentPlayer = whoseTurn(state);
-  printf("inside handcard() currentPlayer: %d\n",currentPlayer);
 	return state->hand[currentPlayer][handPos];
 }
 
@@ -1039,17 +1038,17 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case salvager:
-      //+1 buy
+		
+		//+1 buy
       state->numBuys++;
 			
       if (choice1)
 	{
-	  //gain coins equal to trashed card
+		//gain coins equal to trashed card
 	  state->coins = state->coins + getCost( handCard(choice1, state) );
 	  //trash card
-	  discardCard(choice1, currentPlayer, state, 1);	
+		discardCard(choice1, currentPlayer, state, 1);	
 	}
-			
       //discard card
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
