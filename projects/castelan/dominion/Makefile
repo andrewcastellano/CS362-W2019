@@ -39,7 +39,6 @@ unittestresults:
 	gcc -o cardtest4 dominion.c cardtest4.c rngs.c $(CFLAGS)
 	./cardtest4 >> tests.out
 	gcov dominion.c >> tests.out
-	cat dominion.c.gcov >> tests.out
 
 
 interface.o: interface.h interface.c
