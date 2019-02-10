@@ -38,7 +38,7 @@ unittestresults:
 	./cardtest3 >> unittestresults.out
 	gcc -o cardtest4 dominion.c cardtest4.c rngs.c $(CFLAGS)
 	./cardtest4 >> unittestresults.out
-	gcov dominion.c>> unittestresults.out
+	gcov dominion.c >> unittestresults.out
 
 
 interface.o: interface.h interface.c
