@@ -35,6 +35,8 @@ randomtests: randomtestadventurer.c dominion.o rngs.o
 randomtest1: randomtestcard1.c dominion.o rngs.o
 	gcc -o rt -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
 
+randomtest2: randomtestcard2.c dominion.o rngs.o
+	gcc -o rt -g randomtestcard2.c dominion.o rngs.o $(CFLAGS)
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)

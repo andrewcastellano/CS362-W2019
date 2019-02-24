@@ -1099,13 +1099,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
 {
-	
-  //if card is not trashed, added to Played pile 
+
+	//if card is not trashed, added to Played pile 
   if (trashFlag < 1)
     {
       //add card to played pile
-      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
-      state->playedCardCount++;
+			state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+			state->playedCardCount++;
     }
 	
   //set played card to -1
@@ -1248,11 +1248,10 @@ int i;
 }
 
 int playCouncilRoom(struct gameState *state, int handPos){
-
 int currentPlayer = whoseTurn(state);
 int i;
       //+4 Cards
-  for (i = 0; i <= 4; i++)
+  for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}		
@@ -1260,21 +1259,21 @@ int i;
    state->numBuys++;			
       
    //Each other player draws a card
-  for (i = 0; i < state->numPlayers+1; i++)
+
+	for (i = 0; i < state->numPlayers; i++)
 	{
 	  if ( i == currentPlayer )
 	    {
 	      drawCard(i, state);
 	    }
-	}			
+	}		
   //put played card in played card pile
-  discardCard(handPos, currentPlayer, state, 0);
-  return 0;
+	discardCard(handPos, currentPlayer, state, 0);
+	return 0;
 }
 //end of dominion.c
 
 int playFeast(struct gameState *state, int choice1){
-
 int currentPlayer = whoseTurn(state);
 int i,x;
 int temphand[MAX_HAND];
@@ -1289,7 +1288,8 @@ int temphand[MAX_HAND];
       //Update Coins for Buy
   updateCoins(currentPlayer, state, 5);
   x = 1;//Condition to loop on
-  while( x == 1) {//Buy one card
+  while(x == 1) {//Buy one card
+	printf("trying to buy card\n");
   	if (supplyCount(choice1, state) <= 0){
 	    if (DEBUG)
 	      printf("None of that card left, sorry!\n");
